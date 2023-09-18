@@ -42,3 +42,14 @@ form #add:hover {
 form input {
   width: 60%;
 }
+#list {
+  padding: 10px;
+  background-color: yellow;
+}
+#list li {
+  color: white;
+  background-color: red;
+  list-style: none;
+  padding: 5px;
+  margin: 5px;
+}

@@ -1,5 +1,5 @@
 let addbtn = document.querySelector("#add");
-let list = document.querySelector("list");
+var list = document.querySelector("#list");
 let tasks = [];
 
 function updateStorage() {
@@ -17,5 +17,6 @@ addbtn.onclick = (e) => {
     tasks.push(inputKeyword.value);
     updateStorage();
     inputKeyword.value = "";
+    list.appendChild(el);
   }
 };
