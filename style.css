@@ -35,9 +35,9 @@ form input,
   border-radius: 10px;
   border: none;
 }
-form #add:hover{
-    background-color: var(--yellow);
-    cursor: pointer;
+form #add:hover {
+  background-color: var(--yellow);
+  cursor: pointer;
 }
 form input {
   width: 60%;
