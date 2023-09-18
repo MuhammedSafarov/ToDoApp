@@ -12,6 +12,11 @@ function deleteTodo(e) {
   e.target.parentElement.parentElement.style.display = "none";
 }
 
+function doneTodo(e) {
+  e.target.parentElement.parentElement.childNodes[0].style.textDecoration =
+    "line-through";
+}
+
 function addTodo(e) {
   localStorage.getItem("");
   e.preventDefault();
@@ -38,18 +43,13 @@ function addTodo(e) {
     let deletebtn = document.createElement("button");
     deletebtn.className = "delete-btn";
     deletebtn.innerHTML = "Delete";
-
     deletebtn.addEventListener("click", deleteTodo);
 
     //! Done Task
     let donebtn = document.createElement("button");
     donebtn.className = "done-btn";
     donebtn.innerHTML = "Done";
-
-    donebtn.addEventListener("click", (e) => {
-      e.target.parentElement.parentElement.childNodes[0].style.textDecoration =
-        "line-through";
-    });
+    donebtn.addEventListener("click", doneTodo);
 
     //!Add buttons to each task
     buttons.append(deletebtn, donebtn);
