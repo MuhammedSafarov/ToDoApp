@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.todo-box h2{
+    color: dodgerblue;
+}
