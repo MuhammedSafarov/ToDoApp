@@ -13,10 +13,12 @@ addbtn.onclick = (e) => {
 
   if (inputKeyword.value !== "") {
     let el = document.createElement("li");
-    el.innerHTML = inputKeyword.value;
+    let value = document.createElement("p");
+    value.innerHTML = inputKeyword.value;
     tasks.push(inputKeyword.value);
     updateStorage();
     inputKeyword.value = "";
+    el.appendChild(value);
     list.appendChild(el);
 
     let deletebtn = document.createElement("button");
@@ -27,7 +29,16 @@ addbtn.onclick = (e) => {
     deletebtn.addEventListener("click", (e) => {
       e.target.parentElement.style.display = "none";
     });
-    
+
+    let donebtn = document.createElement("button");
+    donebtn.className = "done-btn";
+    donebtn.innerHTML = "Done";
+    el.appendChild(donebtn);
+
+    donebtn.addEventListener("click", (e) => {
+      e.target.parentElement.childNodes[0].style.textDecoration =
+        "line-through";
+    });
   } else {
     alert("Please write something !");
   }
