@@ -7,7 +7,15 @@ function updateStorage() {
 }
 
 addbtn.onclick = (e) => {
-    localStorage.getItem("");
-    e.preventDefault();
-    let inputKeyword = document.querySelector('list-item');
-} 
+  localStorage.getItem("");
+  e.preventDefault();
+  let inputKeyword = document.querySelector("#list-item");
+
+  if (inputKeyword.value !== "") {
+    let el = document.createElement("li");
+    el.innerHTML = inputKeyword.value;
+    tasks.push(inputKeyword.value);
+    updateStorage();
+    inputKeyword.value = "";
+  }
+};
