@@ -1,8 +1,44 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --yellow: #e1b517;
 }
-.todo-box h2{
-    color: dodgerblue;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-box {
+  width: 50%;
+  height: 50%;
+  margin-top: 10%;
+  padding: 2rem;
+  border: 1px solid var(--yellow);
+}
+.todo-box h1,
+form {
+  text-align: center;
+  margin: 15px;
+}
+.todo-box h1 {
+  color: var(--yellow);
+}
+form input,
+#add {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+form #add:hover{
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+form input {
+  width: 60%;
 }
