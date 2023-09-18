@@ -1,20 +1,26 @@
-let addbtn = document.querySelector("#add");
-var list = document.querySelector("#list");
+const form = document.getElementById("addForm");
+var list = document.getElementById("list");
 let tasks = [];
 
-addbtn.addEventListener("click", addTodo);
+form.addEventListener("submit", addTodo);
+list.addEventListener("click", deleteTodo);
 
 function updateStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function deleteTodo(e) {
-  e.target.parentElement.parentElement.style.display = "none";
+  if (e.target.classList.contains("delete-btn")) {
+    let test = e.target.parentNode.parentNode;
+    list.removeChild(test);
+  }
 }
 
 function doneTodo(e) {
-  e.target.parentElement.parentElement.childNodes[0].style.textDecoration =
-    "line-through";
+  if (e.target.classList.contains("done-btn")) {
+    e.target.parentElement.parentElement.childNodes[0].style.textDecoration =
+      "line-through";
+  }
 }
 
 function addTodo(e) {
