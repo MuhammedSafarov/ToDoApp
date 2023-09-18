@@ -18,5 +18,17 @@ addbtn.onclick = (e) => {
     updateStorage();
     inputKeyword.value = "";
     list.appendChild(el);
+
+    let deletebtn = document.createElement("button");
+    deletebtn.className = "delete-btn";
+    deletebtn.innerHTML = "Delete";
+    el.appendChild(deletebtn);
+
+    deletebtn.addEventListener("click", (e) => {
+      e.target.parentElement.style.display = "none";
+    });
+    
+  } else {
+    alert("Please write something !");
   }
 };
