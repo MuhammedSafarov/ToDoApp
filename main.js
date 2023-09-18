@@ -2,11 +2,17 @@ let addbtn = document.querySelector("#add");
 var list = document.querySelector("#list");
 let tasks = [];
 
+addbtn.addEventListener("click", addTodo);
+
 function updateStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-addbtn.onclick = (e) => {
+function deleteTodo(e) {
+  e.target.parentElement.parentElement.style.display = "none";
+}
+
+function addTodo(e) {
   localStorage.getItem("");
   e.preventDefault();
   let inputKeyword = document.querySelector("#list-item");
@@ -33,9 +39,7 @@ addbtn.onclick = (e) => {
     deletebtn.className = "delete-btn";
     deletebtn.innerHTML = "Delete";
 
-    deletebtn.addEventListener("click", (e) => {
-      e.target.parentElement.parentElement.style.display = "none";
-    });
+    deletebtn.addEventListener("click", deleteTodo);
 
     //! Done Task
     let donebtn = document.createElement("button");
@@ -53,4 +57,4 @@ addbtn.onclick = (e) => {
   } else {
     alert("Please write something !");
   }
-};
+}
