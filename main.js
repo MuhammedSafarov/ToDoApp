@@ -13,7 +13,14 @@ addbtn.onclick = (e) => {
 
   if (inputKeyword.value !== "") {
     let el = document.createElement("li");
+    el.className = "task";
+
     let value = document.createElement("p");
+
+    let buttons = document.createElement("div");
+    buttons.className = "buttons";
+
+    //! Add task to array and LS
     value.innerHTML = inputKeyword.value;
     tasks.push(inputKeyword.value);
     updateStorage();
@@ -21,24 +28,28 @@ addbtn.onclick = (e) => {
     el.appendChild(value);
     list.appendChild(el);
 
+    //! Delete Task
     let deletebtn = document.createElement("button");
     deletebtn.className = "delete-btn";
     deletebtn.innerHTML = "Delete";
-    el.appendChild(deletebtn);
 
     deletebtn.addEventListener("click", (e) => {
-      e.target.parentElement.style.display = "none";
+      e.target.parentElement.parentElement.style.display = "none";
     });
 
+    //! Done Task
     let donebtn = document.createElement("button");
     donebtn.className = "done-btn";
     donebtn.innerHTML = "Done";
-    el.appendChild(donebtn);
 
     donebtn.addEventListener("click", (e) => {
-      e.target.parentElement.childNodes[0].style.textDecoration =
+      e.target.parentElement.parentElement.childNodes[0].style.textDecoration =
         "line-through";
     });
+
+    //!Add buttons to each task
+    buttons.append(deletebtn, donebtn);
+    el.appendChild(buttons);
   } else {
     alert("Please write something !");
   }

@@ -44,15 +44,33 @@ form input {
 }
 #list {
   padding: 10px;
-  background-color: yellow;
 }
-#list li {
+#list .task {
   color: white;
-  background-color: red;
   list-style: none;
-  padding: 5px;
+  padding: 7px;
   margin: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--yellow);
+  background-color: rgb(21, 22, 33);
+}
+.task .buttons button {
+  margin: 3px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  font-weight: normal;
+  color: white;
+}
+.buttons button:hover {
+  cursor: pointer;
+}
+.buttons .delete-btn {
+  background-color: red;
+}
+.buttons .done-btn {
+  background-color: green;
 }
